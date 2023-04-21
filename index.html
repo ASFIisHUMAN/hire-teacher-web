@@ -7,12 +7,56 @@
     <title>Navbar with Sign Up and Login Forms</title>
     <!-- Include Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .mt-5{
+            width: 80%;
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 2px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-group label {
+            font-weight: bold;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            font-weight: bold;
+            border-radius: 20px;
+        }
+
+        .btn-primary:hover {
+            background-color: #5110f3;
+            border-color: #000000;
+        }
+
+        #loginForm {
+            display: none;
+        }
+        .mt-3{
+            max-width: fit-content;
+            background: transparent;
+          
+            padding: 2px;
+        }
+        .boltu{
+            color: #5110f3;
+        }
+        .bol1{
+            color: rgb(160, 2, 234);
+        }
+    </style>
 </head>
 
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand" href="#"><i>Navbar</i> </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -35,7 +79,7 @@
 
     <!-- Sign Up Form -->
     <div class="container mt-5" id="signupForm">
-        <h2>Sign Up</h2>
+        <h2 class="bol1">Sign Up</h2>
         <form>
             <div class="form-group">
                 <label for="signupUsername">Email</label>
@@ -48,23 +92,24 @@
             </div>
             <div class="form-group">
                 <label for="signupPassword">Password</label>
-                <input type="password" class="form-control" id="signupPassword" placeholder="Password" required>
+                <input type="password" class="form-control" id="signupPassword" placeholder="Password" required minlength="8" maxlength="16">
             </div>
             <button type="submit" class="btn btn-primary">Sign Up</button>
+            <p><i><h5>Already have an accpunt? <b class="boltu">click the (Swap Form) button and go to login</b></h5></i></p>
         </form>
     </div>
 
     <!-- Login Form -->
     <div class="container mt-5" id="loginForm" style="display: none;">
-        <h2>Login</h2>
+        <h2 class="bol1">Login</h2>
         <form>
             <div class="form-group">
                 <label for="loginUsername">Username</label>
-                <input type="text" class="form-control" id="loginUsername" placeholder="Enter username">
+                <input type="text" class="form-control" id="loginUsername" placeholder="Enter username" required>
             </div>
             <div class="form-group">
                 <label for="loginPassword">Password</label>
-                <input type="password" class="form-control" id="loginPassword" placeholder="Password">
+                <input type="password" class="form-control" id="loginPassword" placeholder="Password" required  minlength="8" maxlength="16">
             </div>
             <button type="submit" class="btn btn-primary">Login</button>
         </form>
@@ -72,7 +117,7 @@
 
     <!-- Toggle Button -->
     <div class="container mt-3">
-        <button class="btn btn-primary" onclick="toggleForm()">Toggle Form</button>
+        <button class="btn btn-primary" onclick="toggleForm()">Swap Form</button>
     </div>
 
     <!-- Include jQuery and Bootstrap JS -->
